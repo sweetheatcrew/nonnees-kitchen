@@ -1,4 +1,5 @@
 :root {
+    /* --- Styles --- */
     --primary-color: hsl(144, 92%, 14%);
     --secondary-color: #f8dd95;
     --tertiary-color: #03451dab;
@@ -6,6 +7,18 @@
     --quintenary-color: #ffffff;
     --primary-font: "Times New Roman";
     --secondary-font: "Arial";
+
+    /* --- Fluid Spacing Scale (Padding & Margins) --- */
+    --font-sm: clamp(0.875rem, calc(0.8rem + 0.3vw), 1rem);
+    --font-base: clamp(1rem, calc(1.1rem + 0.5vw), 1.25rem);
+    --font-md: clamp(1.25rem, calc(1.3rem + 0.8vw), 1.5rem);
+    --font-lg: clamp(1.75rem, calc(1.6rem + 1.2vw), 2rem);
+    --font-xl: clamp(2.25rem, calc(1.8rem + 2vw), 4rem);
+
+    /* --- Fluid Spacing Scale (Padding & Margins) --- */
+    --space-sm: clamp(0.5rem, calc(0.4rem + 0.5vw), 1rem);
+    --space-md: clamp(1rem, calc(0.8rem + 1vw), 2rem);
+    --space-lg: clamp(2rem, calc(1.5rem + 2vw), 4rem);
 }
 
 /* <--------- Box-sizing reset for all elements and pseudo-elements ---------> */
@@ -45,12 +58,12 @@ html, body {
 #website-title {
     color: var(--secondary-color);
     text-shadow: 1px 1px 5px var(--secondary-color);
-    font-size: 1.9rem;
+    font-size: var(--font-xl);
     font-family: var(--primary-font);
     font-weight: 400;
     text-decoration: underline;
     text-decoration-thickness: 3px;
-    margin-bottom: 2%; 
+    margin-bottom: var(--space-sm); 
     
 }
 
@@ -85,7 +98,7 @@ html, body {
     height: max-content;
     inset: 0;
     margin: auto;
-    font-size: 1.5rem;
+    font-size: var(--font-xl);
     cursor: pointer;
     transition: opacity .4s ease, transform .4s ease;
 }
@@ -116,7 +129,7 @@ html, body {
 }
 
 .dropdown-list li, .sub-dropdown-list li{
-    font-size: 1.2rem;
+    font-size: var(--font-lg);
 }
 
 .nav-link, .dropdown-parent {
@@ -211,9 +224,9 @@ html, body {
 
 .welcome-page-title, .page-title {
     text-align: center;
-    font-size: 1.9rem;
-    margin-top: 8%;
-    margin-bottom: 3%;
+    font-size: var(--font-lg);
+    margin-top: var(--space-md);
+    margin-bottom: var(--space-md);
     text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -393,6 +406,14 @@ video {
     font-size: 0.9rem;
 }
 
+.sub-recipedetails-title {
+    list-style-type: circle;
+}
+
+.sub-recipedetails {
+    margin-left: 6%;
+}
+
 #recipes .subtitles {
     margin-top: 5%;
     margin-bottom: 2.5%;
@@ -418,9 +439,12 @@ video {
 
 
 .instructions li {
-    list-style: decimal;
     line-height: 1.7;
     font-size: 1.08rem;
+}
+
+.sub-instructions {
+    margin-left: 6%;
 }
 
 .recipe-name {
